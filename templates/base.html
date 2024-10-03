@@ -1,48 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Traffic Symbol Recognition</title>
 
-
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <link
+      href="{{ url_for('static', filename='css/main.css') }}"
+      rel="stylesheet"
+    />
 
     <!-- Bootstrap css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
 
     <!-- style -->
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
-</head>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}"
+    />
+    <link
+      href="{{url_for('static', filename='assets/css/main.css')}}"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark custom-navbar p-2" id="top_nav">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="http://127.0.0.1:3000/"><img class="img-fluid logo"
-                src="{{url_for('static', filename='images/logo2.jpg')}}" alt="logo"></a>
+    <!-- <nav
+      class="navbar navbar-expand-lg navbar-dark custom-navbar p-2"
+      id="top_nav"
+    >
+      <div class="container-fluid">
+        <a
+          class="navbar-brand"
+          href="http://127.0.0.1:3000/"
+          style="padding-left: 30px"
+          ><img
+            class="img-fluid logo"
+            src="{{url_for('static', filename='images/trafficlogo.png')}}"
+            alt="logo"
+        /></a>
 
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <h1 class="nav-head" >Traffic Symbol Recognition.</h1>
-            
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <h1 class="nav-head">Traffic Symbol Recognition.</h1>
         </div>
-    </div>
-</nav>
-
+      </div>
+    </nav> -->
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div
+        class="container d-flex align-items-center justify-flex-start navbar-dash"
+      >
+        <a class="navbar-brand" href="http://127.0.0.1:3000/"
+          ><img
+            class="img-fluid logo"
+            src="{{url_for('static',
+          filename='images/trafficlogo.png')}}"
+            alt="logo"
+            style="border-radius: 36px"
+        /></a>
+        <a
+          href=""
+          class="logo d-flex align-items-center me-auto me-lg-0 logo-dash"
+        >
+          <h1>Traffic Symbol Recognition<span>.</span></h1>
+        </a>
+      </div>
+    </header>
+    <!-- End Header -->
     <!-- container-fluid -->
-    <div class="container-fluid">
-
-        {% block content %}{% endblock %}
-    </div>
-   
-    
-</body>
-<footer>
-
-    <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>
-</footer>
-
+    <div class="container-fluid">{% block content %}{% endblock %}</div>
+  </body>
+  <footer>
+    <script
+      src="{{ url_for('static', filename='js/main.js') }}"
+      type="text/javascript"
+    ></script>
+  </footer>
 </html>
