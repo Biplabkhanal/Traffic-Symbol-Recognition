@@ -25,66 +25,95 @@
       href="{{url_for('static', filename='assets/css/main.css')}}"
       rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
 
   <body>
     <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top d-flex align-items-center">
-      <div class="container d-flex align-items-center justify-content-between">
-        <a href="" class="logo d-flex align-items-center me-auto me-lg-0">
-          <h1>Traffic Symbol Recognition<span>.</span></h1>
-        </a>
+    <header class="header">
+      <nav class="modern-nav">
+        <div class="nav-brand">
+          <a href="#">DriveSmart</a>
+        </div>
 
-        <nav id="navbar" class="navbar">
-          <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-          </ul>
-        </nav>
-        <!-- .navbar -->
-      </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="nav-links">
+          <a href="#hero" class="nav-item">Home</a>
+          <a href="#about" class="nav-item">About</a>
+        </div>
+      </nav>
     </header>
     <!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
-    <section id="hero" class="hero d-flex align-items-center section-bg">
+    <section id="hero" class="hero d-flex align-items-center">
+      <div class="hero-bg-animation"></div>
       <div class="container">
         <div class="row justify-content-between gy-5">
           <div class="col-lg-5 order-1 order-lg-1 text-center text-lg-start">
             <img
               src="{{url_for('static', filename='assets/img/traffic_police.png')}}"
-              class="img-fluid"
-              alt=""
-              data-aos="zoom-out"
-              data-aos-delay="300"
+              class="img-fluid animate-float"
+              alt="Traffic Police"
+              data-aos="zoom-in"
+              data-aos-duration="1200"
             />
           </div>
           <div
             class="col-lg-5 order-2 order-lg-2 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start"
           >
-            <h2 class="text-danger" data-aos="fade-up">DriveSmart</h2>
-            <p data-aos="fade-up" data-aos-delay="100">
-              ML takes the wheel, making roads safer and journeys smoother,
-              paving the way for safer roads and smoother rides. Buckle up for
-              the tech takeover! 🤖🚗 #AIInControl.<br />
-              Empower journey with smart recognition.
-            </p>
-
-            <p class="p-heading p-large"></p>
-
-            <button
-              class="btn btn-outline-danger"
-              onclick="navigateToDashboard()"
+            <div
+              class="hero-content"
+              data-aos="fade-up"
+              data-aos-duration="1000"
             >
-              Recognize Now
-            </button>
+              <div class="heading-wrapper">
+                <i class="fas fa-shield-alt safety-icon" aria-hidden="true"></i>
+                <h2 class="gradient-text" id="hero-title">DriveSmart AI</h2>
+              </div>
 
-            <script>
-              function navigateToDashboard() {
-                // Redirect to the dashboard page
-                window.location.href = "/dashboard";
-              }
-            </script>
+              <p
+                class="hero-description"
+                data-aos="fade-up"
+                data-aos-delay="150"
+              >
+                Experience the future of road safety with our advanced traffic
+                sign recognition system. Powered by machine learning, DriveSmart
+                enhances driver awareness and promotes safer roads through
+                real-time symbol detection and interpretation.
+                <span class="highlight-text"
+                  >Join the revolution in intelligent driving assistance.</span
+                >
+              </p>
+
+              <div
+                class="features-badge"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <span class="badge" role="status">AI-Powered</span>
+                <span class="badge" role="status">Real-time Detection</span>
+                <span class="badge" role="status">99% Accuracy</span>
+              </div>
+
+              <button
+                class="btn btn-outline-danger btn-lg mt-4"
+                onclick="navigateToDashboard()"
+                aria-label="Get Started with DriveSmart"
+                type="button"
+              >
+                Get Started
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -92,79 +121,166 @@
     <!-- End Hero Section -->
 
     <main id="main">
-      <!-- ======= About Section ======= -->
       <section id="about" class="about">
-        <div class="container" data-aos="fade-up">
-          <div class="section-header">
-            <p><span>About Us</span></p>
+        <div class="container">
+          <div class="about-header" data-aos="fade-up">
+            <span class="subtitle">What We Do</span>
+            <h2>About Our Technology</h2>
+            <div class="underline"></div>
           </div>
 
-          <div class="row gy-4">
-            <div
-              class="col-lg-7 position-relative about-img"
-              style="background-image: url(../static/assets/img/t_symbols.png)"
-              data-aos="fade-up"
-              data-aos-delay="150"
-            ></div>
-            <div
-              class="col-lg-5 d-flex align-items-end"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div class="content ps-0 ps-lg-5">
-                <p class="fst-italic">Traffic Symbol Recognition</p>
-                <ul>
-                  <li>
-                    <i class="bi bi-check2-all"></i>a specific application of
-                    computer vision and image processing that involves training
-                    systems to identify and interpret traffic signs or symbols
-                    in images or video streams
-                  </li>
-                  <li>
-                    <i class="bi bi-check2-all"></i> a critical component of
-                    modern transportation systems, contributing to road safety,
-                    assisting drivers, and facilitating the development of
-                    autonomous vehicles
-                  </li>
-                  <li>
-                    <i class="bi bi-check2-all"></i> enables vehicles to
-                    understand and respond to the visual cues present in the
-                    road environment.
-                  </li>
-                </ul>
-                <div class="position-relative mt-4">
-                  <img
-                    src="{{url_for('static', filename='assets/img/car.png')}}"
-                    class="img-fluid"
-                    alt=""
-                  />
+          <div class="about-content">
+            <div class="about-image" data-aos="fade-right">
+              <img
+                src="../static/assets/img/t_symbols.png"
+                alt="Traffic Symbols"
+                class="main-img"
+              />
+              <div class="floating-card">
+                <img
+                  src="{{url_for('static', filename='assets/img/car.png')}}"
+                  alt="Car"
+                  class="secondary-img"
+                />
+              </div>
+            </div>
+
+            <div class="about-text" data-aos="fade-left">
+              <h3>Traffic Symbol Recognition</h3>
+              <p class="mission-text">
+                Our mission is to revolutionize road safety through advanced AI
+                technology that makes driving safer and more intelligent.
+              </p>
+
+              <div class="feature-list">
+                <div class="feature-item">
+                  <div class="icon">
+                    <i class="bi bi-camera"></i>
+                  </div>
+                  <p class="feature-text">
+                    Advanced computer vision and image processing for accurate
+                    traffic sign identification
+                  </p>
                 </div>
+
+                <div class="feature-item">
+                  <div class="icon">
+                    <i class="bi bi-shield-check"></i>
+                  </div>
+                  <p class="feature-text">
+                    Enhanced road safety through real-time sign detection and
+                    driver assistance
+                  </p>
+                </div>
+
+                <div class="feature-item">
+                  <div class="icon">
+                    <i class="bi bi-car-front"></i>
+                  </div>
+                  <p class="feature-text">
+                    Enabling autonomous vehicles with intelligent environmental
+                    awareness
+                  </p>
+                </div>
+                <div class="feature-item">
+                  <div class="icon">
+                    <i class="bi bi-database-check"></i>
+                  </div>
+                  <p class="feature-text">
+                    Pre-trained models supporting 40+ traffic signs across
+                    different countries and regions
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-container" data-aos="fade-up">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-graph-up"></i>
+              </div>
+              <div class="stat-content">
+                <h4 class="counter" data-target="95">0</h4>
+                <span class="percent">%</span>
+                <p>Accuracy Rate</p>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-lightning"></i>
+              </div>
+              <div class="stat-content">
+                <h4 class="counter" data-target="50">0</h4>
+                <span class="unit">ms</span>
+                <p>Detection Speed</p>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="bi bi-sign-stop"></i>
+              </div>
+              <div class="stat-content">
+                <h4 class="counter" data-target="40">0</h4>
+                <span class="plus">+</span>
+                <p>Sign Types</p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <!-- End About Section -->
     </main>
     <!-- End #main -->
 
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
       <div class="container">
-        <div class="copyright">
-          &copy; Copyright
-          <strong><span>Trafffic Symbol Recognition</span></strong
-          >.
+        <div class="footer-content">
+          <div class="footer-col">
+            <h4>Traffic Symbol Recognition</h4>
+            <p>
+              Making roads safer with advanced AI technology for accurate
+              traffic sign detection and recognition.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="bi bi-github"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+              <a href="#"><i class="bi bi-twitter"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#about">About</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact Info</h4>
+            <ul class="contact-info">
+              <li>
+                <i class="bi bi-envelope"></i> info@trafficrecognition.com
+              </li>
+              <li><i class="bi bi-phone"></i> +977 9803344703</li>
+              <li><i class="bi bi-geo-alt"></i> Kathmandu, Nepal</li>
+            </ul>
+          </div>
         </div>
-        <div class="credits">
-          Designed by:<br />
-          Biplab Khanal<br />
-          Nischal Thapa<br />
-          Prateek Karakheti
+
+        <div class="footer-bottom" id="footer">
+          <div class="copyright">
+            &copy; <span id="currentYear"></span> <strong>DriveSmart</strong>.
+            All Rights Reserved
+          </div>
+          <div class="credits">Designed by <a href="#">Biplab Khanal</a></div>
         </div>
       </div>
     </footer>
-    <!-- End Footer -->
+
     <!-- End Footer -->
 
     <!-- Vendor JS Files -->
@@ -172,5 +288,24 @@
 
     <!-- Template Main JS File -->
     <script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+    <script>
+      function navigateToDashboard() {
+        try {
+          window.location.href = "/dashboard";
+        } catch (error) {
+          console.error("Navigation failed:", error);
+          alert("Unable to navigate to dashboard. Please try again.");
+        }
+      }
+      document
+        .querySelector(".hamburger")
+        .addEventListener("click", function () {
+          document.querySelector(".nav-links").classList.toggle("active");
+          this.classList.toggle("active");
+        });
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
   </body>
 </html>
