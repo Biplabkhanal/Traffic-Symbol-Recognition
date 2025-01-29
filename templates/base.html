@@ -28,52 +28,22 @@
       href="{{url_for('static', filename='assets/css/main.css')}}"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
   </head>
 
   <body>
-    <!-- navbar -->
-    <!-- <nav
-      class="navbar navbar-expand-lg navbar-dark custom-navbar p-2"
-      id="top_nav"
-    >
-      <div class="container-fluid">
-        <a
-          class="navbar-brand"
-          href="http://127.0.0.1:3000/"
-          style="padding-left: 30px"
-          ><img
-            class="img-fluid logo"
-            src="{{url_for('static', filename='images/trafficlogo.png')}}"
-            alt="logo"
-        /></a>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <h1 class="nav-head">Traffic Symbol Recognition.</h1>
-        </div>
-      </div>
-    </nav> -->
     <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top d-flex align-items-center">
-      <div
-        class="container d-flex align-items-center justify-flex-start navbar-dash"
-      >
-        <a class="navbar-brand" href="http://127.0.0.1:3000/"
-          ><img
-            class="img-fluid logo"
-            src="{{url_for('static',
-          filename='images/trafficlogo.png')}}"
-            alt="logo"
-            style="border-radius: 36px"
-        /></a>
-        <a
-          href=""
-          class="logo d-flex align-items-center me-auto me-lg-0 logo-dash"
-        >
-          <h1>Traffic Symbol Recognition<span>.</span></h1>
-        </a>
-      </div>
+    <header class="header">
+      <nav class="modern-nav">
+        <div class="nav-brand">
+          <a href="{{ url_for('home') }}">DriveSmart</a>
+        </div>
+      </nav>
     </header>
-    <!-- End Header -->
+
     <!-- container-fluid -->
     <div class="container-fluid">{% block content %}{% endblock %}</div>
   </body>

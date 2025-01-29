@@ -1,81 +1,186 @@
 .img-preview {
-    width: 256px;
-    height: 256px;
-    position: relative;
-    border: 5px solid #F8F8F8;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
-    margin-top: 1em;
-    margin-bottom: 1em;
+  width: 256px;
+  height: 256px;
+  position: relative;
+  border: 5px solid #f8f8f8;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
-.img-preview>div {
-    width: 100%;
-    height: 100%;
-    background-size: 256px 256px;
-    background-repeat: no-repeat;
-    background-position: center;
+.img-preview > div {
+  width: 100%;
+  height: 100%;
+  background-size: 256px 256px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 input[type="file"] {
-    display: none;
+  display: none;
 }
 
-.upload-label{
-    display: inline-block;
-    padding: 12px 30px;
-    background: #39D2B4;
-    color: #fff;
-    font-size: 1em;
-    transition: all .4s;
-    cursor: pointer;
+.upload-label {
+  display: inline-block;
+  padding: 12px 30px;
+  /* background: #39d2b4; */
+  color: #fff;
+  font-size: 1em;
+  transition: all 0.4s;
+  cursor: pointer;
 }
 
-.upload-label:hover{
-    background: #34495E;
-    color: #39D2B4;
-}
+/* .upload-label:hover {
+  background: #34495e;
+  color: #39d2b4;
+} */
 
 .loader {
-    border: 8px solid #f3f3f3; /* Light grey */
-    border-top: 8px solid #3498db; /* Blue */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.p_output{
-    height: 300px;
-    width: 600px;
-    background-color: rgb(29, 197, 189);
-    border-radius: 5px;
-    text-align: center;
-    border: 6px solid black;
-    margin: auto;
-    color: #fff;
-    box-shadow: 10px 8px 10px 5px black;
+.p_output {
+  height: 300px;
+  width: 600px;
+  background-color: rgb(29, 197, 189);
+  border-radius: 5px;
+  text-align: center;
+  border: 6px solid black;
+  margin: auto;
+  color: #fff;
+  box-shadow: 10px 8px 10px 5px black;
 }
-.arrow, .p_result{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.arrow,
+.p_result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.p_output{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.upload{
-    border: 6px solid black;
-    border-radius: 3px;
-    box-shadow: 10px 8px 10px 5px black;
-    height: 540px;
+.p_output {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Welcome Section */
+.welcome-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
 
+.typing-text {
+  font-size: 2.5rem;
+  border-right: 3px solid #fff;
+  animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+  white-space: nowrap;
+}
 
+/* Glass Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Info Cards */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.info-card {
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  background: rgba(22, 18, 18, 0.1);
+  border-radius: 8px;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Animations */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animated-icon {
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+
+  .typing-text {
+    font-size: 1.8rem;
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+}

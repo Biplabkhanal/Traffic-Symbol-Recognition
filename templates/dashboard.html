@@ -1,54 +1,92 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="row justify-content-center" id="banner">
-  <div class="row mt-3 pt-5 px-5">
-    <div class="col-md-4 pt-2 px-4 upload" id="banner-txt">
-      <!-- <h1>Traffic Symbol Recognization</h1> -->
-      <h2>Upload Picture</h2>
-      <div>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <form id="upload-file" method="post" enctype="multipart/form-data">
-          <label for="imageUpload" class="upload-label"> Upload... </label>
-          <input
-            type="file"
-            name="imagefile"
-            id="imageUpload"
-            accept=".png, .jpg, .jpeg"
-          />
-        </form>
+<div class="dashboard-container">
+  <!-- Welcome Section -->
+  <div class="welcome-section">
+    <h1 class="typing-text">Welcome to Traffic Sign Recognition</h1>
+    <p class="subtitle">Upload an image to identify traffic signs</p>
+  </div>
 
-        <div class="image-section" style="display: none">
-          <div class="img-preview">
-            <div id="imagePreview"></div>
-          </div>
-          <div>
-            <button
-              type="button"
-              class="btn btn-primary btn-lg"
-              id="banner-btn1"
-            >
-              Predict Symbol
-            </button>
-          </div>
-        </div>
-
-        <div class="loader" style="display: none"></div>
+  <div class="dashboard-content">
+    <!-- Info Cards -->
+    <div class="info-cards">
+      <div class="info-card">
+        <i class="bi bi-image"></i>
+        <h4>Supported Formats</h4>
+        <p>PNG, JPG, JPEG</p>
+      </div>
+      <div class="info-card">
+        <i class="bi bi-speedometer2"></i>
+        <h4>Fast Processing</h4>
+        <p>Quick Results</p>
+      </div>
+      <div class="info-card">
+        <i class="bi bi-check-circle"></i>
+        <h4>Accurate</h4>
+        <p>High Precision</p>
+      </div>
+      <div class="info-card">
+        <i class="bi bi-robot"></i>
+        <h4>AI Powered</h4>
+        <p>Deep Learning Model</p>
       </div>
     </div>
-    <div class="col-md-2 text-center arrow" id="banner-img">
-      <img
-        src="{{url_for('static', filename='images/arrow.png')}}"
-        alt=""
-        class="img-fluid"
-      />
+
+    <!-- Upload Section -->
+    <div class="upload-section glass-effect">
+      <div class="upload-card">
+        <h2 class="section-title">Upload Traffic Sign Image</h2>
+        <div class="upload-area">
+          <form id="upload-file" method="post" enctype="multipart/form-data">
+            <div class="drag-area pulse">
+              <label for="imageUpload" class="upload-label">
+                <i class="bi bi-cloud-upload animated-icon"></i>
+                <span>Click to upload</span>
+                <span class="small-text">Supports PNG, JPG or JPEG</span>
+              </label>
+              <input
+                type="file"
+                name="imagefile"
+                id="imageUpload"
+                accept=".png, .jpg, .jpeg"
+              />
+            </div>
+          </form>
+
+          <div class="image-section" style="display: none">
+            <div class="preview-container glass-effect">
+              <div class="img-preview">
+                <div id="imagePreview"></div>
+              </div>
+            </div>
+
+            <div class="action-buttons">
+              <button type="button" class="predict-btn" id="banner-btn1">
+                <i class="bi bi-search"></i>
+                <span>Predict Symbol</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="loader" style="display: none">
+            <div class="spinner"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-md-6 p_result" id="banner-img">
-      <div class="p_output">
-        <h3 id="result">
-          <span> </span>
-        </h3>
+
+    <!-- Result Section -->
+    <div class="result-section glass-effect">
+      <div class="result-card">
+        <h3 class="result-title">Prediction Result</h3>
+        <div class="result-display">
+          <h3 id="result">
+            <span></span>
+          </h3>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 {% endblock %}
