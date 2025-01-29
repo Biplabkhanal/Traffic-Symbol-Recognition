@@ -249,6 +249,7 @@ section {
   display: flex;
   align-items: center;
   gap: 20px;
+  justify-content: center;
 }
 
 .stat-item:hover {
